@@ -1,0 +1,4 @@
+name: mainServerPlugin
+main: com.hyonsu.mainServerPlugin.mainServerPlugin
+version: 1.0
+author: HYONSU

@@ -12,17 +12,17 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    compileOnly("io.github.waterfallmc:waterfall-api:1.17-R0.1-SNAPSHOT")
+    compileOnly("io.github.waterfallmc:waterfall-api:1.18-R0.1-SNAPSHOT")
 }
 
 tasks {
     jar {
         from(configurations.compileClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 
-       doLast {
+        doLast {
             copy {
                 from(File("build/libs/${rootProject.name}-${version}.jar"))
-                val plugins = File("D:/Programming/hypixel_copy/main-server/waterfall/plugins")
+                val plugins = File("D:/Programming/discord/minecraft-bot/waterfall/plugins")
                 into(plugins)
             }
         }

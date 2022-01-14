@@ -1,4 +1,4 @@
-name: mainServerPlugin
-main: com.hyonsu.mainServerPlugin.mainServerPlugin
+name: minecraftBotWaterfall
+main: com.hyonsu.minecraftBotWaterfall.minecraftBotWaterfallPlugin
 version: 1.0
 author: HYONSU

@@ -31,7 +31,11 @@ class minecraftBotWaterfallPluginListener: Listener {
 
     @EventHandler
     fun onPing(e: ProxyPingEvent) {
-        val host = e.connection.virtualHost.hostString
+        val host = e.connection.virtualHost?.hostString
+        if(host == null) {
+            e.response.description = "§c접속 정보를 알 수 없습니다!"
+            return
+        }
         val targetServerInfo = getServerAddress(host).split(":")
 
         if(targetServerInfo[0] == "no") {

@@ -1,21 +1,17 @@
 package com.hyonsu.minecraftBotWaterfall
 
 import net.md_5.bungee.api.ProxyServer
-import net.md_5.bungee.api.ServerPing
-import net.md_5.bungee.api.event.*
+import net.md_5.bungee.api.event.ProxyPingEvent
+import net.md_5.bungee.api.event.ServerConnectEvent
 import net.md_5.bungee.api.plugin.Listener
 import net.md_5.bungee.event.EventHandler
 import java.net.InetSocketAddress
-import java.util.logging.Level
-import kotlin.coroutines.CoroutineContext
 
 
 class minecraftBotWaterfallPluginListener: Listener {
     @EventHandler
     fun onPostLogin(e: ServerConnectEvent) {
         if(e.reason != ServerConnectEvent.Reason.JOIN_PROXY) return
-
-        ProxyServer.getInstance().logger.log(Level.INFO, "someone join")
 
         val host = e.player.pendingConnection.virtualHost.hostString
         val targetServerInfo = getServerAddress(host).split(":")
